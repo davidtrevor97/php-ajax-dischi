@@ -2,5 +2,63 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
-  background-color: red;
+}
+body{
+  background-color: #15172b;
+}
+header{
+  height: 50px;
+  background-color: #363744;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+.selectContainer{
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+}
+.selectContainer select{
+  text-transform: capitalize;
+}
+.app{
+  max-width: 95vw;
+  margin: auto;
+}
+.app ul{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.app ul img{
+  width: 100%;
+  min-height: 80px;
+}
+.app li{
+  width: 120px;
+  margin: 20px 10px;
+  padding: 5px   10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: white;
+  list-style: none;
+  background-color: #363744;
+}
+.app li > h4,
+.app li > h5,
+.app li > h6{
+  background-color: #363744;
+}
+.app li > h4{
+  font-size: 12px;
+  margin: 5px 0 10px 0
+}
+.app li > h5{
+  font-size: 11px;
+}
+.app li > h5,
+.app li > h6{
+  margin: 0 0 5px 0 ;
+  color: rgba(255,255,255,0.7)
 }
