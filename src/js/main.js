@@ -5,7 +5,7 @@ const app = new Vue({
     actualGenre: "all"
   },
   created(){
-    axios.get('<?php include "partials/database.php" ?>')
+     axios.get('http://localhost/php-ajax-dischi/partials/database.php')
     .then( result => {
       this.cds =  result;
       console.log(this.cds);
@@ -18,7 +18,7 @@ const app = new Vue({
   },
   methods:{
     filterByGenre(actualGenre){
-      axios.get('<?php include "partials/database.php" ?>')
+      axios.get('http://localhost/php-ajax-dischi/partials/database.php')
       .then( result => {
         if ( actualGenre === "all" ) {
             this.cds =  result.data.response;

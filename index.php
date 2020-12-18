@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -8,9 +7,6 @@
     <!DOCTYPE html>
       </head>
     <body>
-      <header>
-        <img src="./img/logo.png" alt="logo">
-      </header>
       <div class="app">
         <div class="selectContainer">
           <span>Filter by genre:</span>
@@ -24,12 +20,11 @@
         </div>
         <ul>
           <li v-for="cd in cds" >
-            <img :src="cd.poster" :alt="cd.title">
-            <h4>{{ cd.title }}</h4>
-            <h5>{{ cd.author }}</h5>
-            <h6>{{ cd.genre }}</h6>
-            <h6>{{ cd.year }}</h6>
-
+            <img :src="cd" :alt="cd.title">
+            <h4>{{ cd }}</h4>
+            <h5>{{ cd }}</h5>
+            <h6>{{ cd }}</h6>
+            <h6>{{ cd  }}</h6>
           </li>
         </ul>
       </div>
