@@ -6,11 +6,6 @@
     <link rel="stylesheet" href="style.css">
     <title>DISCHI</title>
     <!DOCTYPE html>
-  <html lang="en" dir="ltr">
-    <head>
-      <link rel="stylesheet" href="./css/style.css">
-      <meta charset="utf-8">
-      <title>DISCHI</title>
       </head>
     <body>
       <header>

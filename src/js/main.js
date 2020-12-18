@@ -5,10 +5,11 @@ const app = new Vue({
     actualGenre: "all"
   },
   created(){
-    axios.get("https://flynn.boolean.careers/exercises/api/array/music")
+    axios.get('<?php include "partials/database.php" ?>')
     .then( result => {
-      this.cds =  result.data.response;
-      return result.data.response;
+      this.cds =  result;
+      console.log(this.cds);
+      return result;
     })
     .catch( error => {
       console.log(error)
@@ -17,7 +18,7 @@ const app = new Vue({
   },
   methods:{
     filterByGenre(actualGenre){
-      axios.get('<?php include "partials/database.php"; ?>')
+      axios.get('<?php include "partials/database.php" ?>')
       .then( result => {
         if ( actualGenre === "all" ) {
             this.cds =  result.data.response;
