@@ -1,35 +1,49 @@
-<?php
-  include "partials/database.php";
- ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <title>DISCHI</title>
-  </head>
-  <body>
-    <!-- Stampare a schermo i dischi musicali utilizzando come dati quelli presenti nel file database.php che trovate in allegato.
-    In questa milestone stampiamo i dischi solo con l’utilizzo di PHP, che stampa direttamente i dischi in pagina: al caricamento della pagina ci saranno tutti i dischi. -->
-    <div class="selectContainer">
+    <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <link rel="stylesheet" href="./css/style.css">
+      <meta charset="utf-8">
+      <title>DISCHI</title>
+      </head>
+    <body>
+      <header>
+        <img src="./img/logo.png" alt="logo">
+      </header>
       <div class="app">
-        <ul>
-      <?php
-      foreach ($database as $album ) { ?>
-
-            <li>
-              <h4><?php echo $album["title"]?></h4>
-              <h5><?php echo $album["author"] ?></h5>
-              <img src="<?php echo $album["poster"] ?>" alt="">
-              <h6><?php echo $album["year"] ?></h6>
-              <h6><?php echo $album["genre"] ?></h6>
-            </li>
-
-    <?php  }
-        ?>
-          </ul>
+        <div class="selectContainer">
+          <span>Filter by genre:</span>
+          <select v-model="actualGenre" @change="filterByGenre(actualGenre)">
+            <option value="all">all</option>
+            <option value="pop">pop</option>
+            <option value="rock">rock</option>
+            <option value="jazz">jazz</option>
+            <option value="metal">metal</option>
+          </select>
         </div>
-    </div>
+        <ul>
+          <li v-for="cd in cds" >
+            <img :src="cd.poster" :alt="cd.title">
+            <h4>{{ cd.title }}</h4>
+            <h5>{{ cd.author }}</h5>
+            <h6>{{ cd.genre }}</h6>
+            <h6>{{ cd.year }}</h6>
 
-  </body>
-</html>
+          </li>
+        </ul>
+      </div>
+
+      <!-- AXIOS -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+      <!-- production version, optimized for size and speed -->
+      <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+      <!-- JAVASCRIPT -->
+      <script type="text/javascript" src="src/js/main.js"></script>
+    </body>
+  </html>

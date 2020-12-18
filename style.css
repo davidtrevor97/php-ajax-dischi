@@ -44,6 +44,7 @@ header{
   color: white;
   list-style: none;
   background-color: #363744;
+  transition: 0.6s;
 }
 .app li > h4,
 .app li > h5,
@@ -61,4 +62,10 @@ header{
 .app li > h6{
   margin: 0 0 5px 0 ;
   color: rgba(255,255,255,0.7)
+}
+/* HOVERS */
+.app ul li:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+  box-shadow:7px 7px 5px #12131d;
 }
